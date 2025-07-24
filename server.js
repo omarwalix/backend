@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import connectMongo from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-
+import authRoutes from "./routes/authRoutes.js";
 //for .env
 dotenv.config();
 
@@ -22,6 +22,7 @@ connectMongo();
 // API Routes
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
 
 //root route
 app.get("/", (req, res) => {
